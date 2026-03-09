@@ -13,5 +13,14 @@ export default {
         USER_NOT_EXIST: `Account does not exist`,
         INVALID_EMAIL_OR_PASSWORD: `Invalid email or password`,
         LOGIN_SUCCESSFUL: `Login successful`
+    },
+
+    todo: {
+        TODO_CREATED: `Todo has been created successfully.`,
+        TODO_UPDATED: `Todo has been updated successfully.`,
+        TODO_DELETED: `Todo has been deleted successfully.`,
+        TODO_COMPLETED: `Todo has been marked as completed.`,
+        TODO_NOT_FOUND: `Todo does not exist`,
+        INVALID_TODO_ID: `Invalid todo ID`
     }
 }

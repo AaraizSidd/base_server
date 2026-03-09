@@ -13305,3 +13305,439 @@
         }
     }
 }
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:06:23.905Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:06:23.913Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:06:23.915Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:11:34.542Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:11:34.551Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:11:34.552Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:13:21.664Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/register"
+        },
+        "message": "Account has been created successfully.",
+        "data": {
+            "success": true,
+            "_id": "69aeab515ebe3a4f5d956720"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:15:20.726Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/registeration/confirm/ebcb017e-11ee-4f90-83a8-8e8e8a03b98c?code=809709"
+        },
+        "message": "Account has been created successfully.",
+        "data": {
+            "success": true,
+            "_id": "69aeab515ebe3a4f5d956720"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:15:43.333Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "success": true,
+            "user": {
+                "_id": "69aeab515ebe3a4f5d956720",
+                "password": "$2b$10$TmQE.6ZoEs2Owt.OhdKiOOGLppD/jvfShTY4lBaXoxcj3wQXA1Dzy",
+                "lastLoginAt": "2026-03-09T11:15:43.325Z",
+                "updatedAt": "2026-03-09T11:15:43.326Z"
+            },
+            "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWFlYWI1MTVlYmUzYTRmNWQ5NTY3MjAiLCJpYXQiOjE3NzMwNTQ5NDMsImV4cCI6MTc3MzA1ODU0M30.zfCetWLLUSUbp0lLpaVEK_BmdNv4SKg2M-yGo_kz5a8",
+            "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWFlYWI1MTVlYmUzYTRmNWQ5NTY3MjAiLCJpYXQiOjE3NzMwNTQ5NDMsImV4cCI6MTgwNDU5MDk0M30.kxxXn_nLOMrjGsUsGR4z6xP5DZhLfW0ecHIGaJdA2rA"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:16:30.976Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/todo"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": {
+                "title": "Pehla Kaam",
+                "description": "This is the first task that needs to be completed.",
+                "status": "pending",
+                "priority": "high",
+                "dueDate": "2026-03-15T00:00:00.000Z",
+                "userId": "69aeab515ebe3a4f5d956720",
+                "_id": "69aeac0e5ebe3a4f5d95672c",
+                "createdAt": "2026-03-09T11:16:30.967Z",
+                "updatedAt": "2026-03-09T11:16:30.967Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:17:03.540Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/todo"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": {
+                "title": "Doosra Kaam",
+                "description": "This works need to be done twice.",
+                "status": "pending",
+                "priority": "high",
+                "dueDate": "2026-03-15T00:00:00.000Z",
+                "userId": "69aeab515ebe3a4f5d956720",
+                "_id": "69aeac2f5ebe3a4f5d956730",
+                "createdAt": "2026-03-09T11:17:03.538Z",
+                "updatedAt": "2026-03-09T11:17:03.538Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:17:17.265Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/todo"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": {
+                "title": "Teesra Kaam",
+                "description": "This works need to be done thrice.",
+                "status": "pending",
+                "priority": "high",
+                "dueDate": "2026-03-15T00:00:00.000Z",
+                "userId": "69aeab515ebe3a4f5d956720",
+                "_id": "69aeac3d5ebe3a4f5d956734",
+                "createdAt": "2026-03-09T11:17:17.224Z",
+                "updatedAt": "2026-03-09T11:17:17.224Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:17:56.805Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PUT",
+            "url": "/v1/todo/69aeac3d5ebe3a4f5d956734"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": {
+                "_id": "69aeac3d5ebe3a4f5d956734",
+                "title": "Updated Task",
+                "description": "This works need to be done thrice.",
+                "status": "in_progress",
+                "priority": "medium",
+                "dueDate": "2026-03-15T00:00:00.000Z",
+                "userId": "69aeab515ebe3a4f5d956720",
+                "createdAt": "2026-03-09T11:17:17.224Z",
+                "updatedAt": "2026-03-09T11:17:56.796Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:18:07.168Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PUT",
+            "url": "/v1/todo/69aeac3d5ebe3a4f5d956734"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": {
+                "_id": "69aeac3d5ebe3a4f5d956734",
+                "title": "Updated Task",
+                "description": "This works need to be done thrice.",
+                "status": "completed",
+                "priority": "medium",
+                "dueDate": "2026-03-15T00:00:00.000Z",
+                "userId": "69aeab515ebe3a4f5d956720",
+                "createdAt": "2026-03-09T11:17:17.224Z",
+                "updatedAt": "2026-03-09T11:18:07.166Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:18:43.378Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/todo"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": [
+                {
+                    "_id": "69aeac3d5ebe3a4f5d956734",
+                    "title": "Updated Task",
+                    "description": "This works need to be done thrice.",
+                    "status": "completed",
+                    "priority": "medium",
+                    "dueDate": "2026-03-15T00:00:00.000Z",
+                    "userId": "69aeab515ebe3a4f5d956720",
+                    "createdAt": "2026-03-09T11:17:17.224Z",
+                    "updatedAt": "2026-03-09T11:18:07.166Z",
+                    "__v": 0
+                },
+                {
+                    "_id": "69aeac2f5ebe3a4f5d956730",
+                    "title": "Doosra Kaam",
+                    "description": "This works need to be done twice.",
+                    "status": "pending",
+                    "priority": "high",
+                    "dueDate": "2026-03-15T00:00:00.000Z",
+                    "userId": "69aeab515ebe3a4f5d956720",
+                    "createdAt": "2026-03-09T11:17:03.538Z",
+                    "updatedAt": "2026-03-09T11:17:03.538Z",
+                    "__v": 0
+                },
+                {
+                    "_id": "69aeac0e5ebe3a4f5d95672c",
+                    "title": "Pehla Kaam",
+                    "description": "This is the first task that needs to be completed.",
+                    "status": "pending",
+                    "priority": "high",
+                    "dueDate": "2026-03-15T00:00:00.000Z",
+                    "userId": "69aeab515ebe3a4f5d956720",
+                    "createdAt": "2026-03-09T11:16:30.967Z",
+                    "updatedAt": "2026-03-09T11:16:30.967Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "page": 1,
+                "limit": 10,
+                "total": 3,
+                "pages": 1
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:19:16.821Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/v1/todo/69aeac2f5ebe3a4f5d956730"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "message": "Operation is completed",
+            "data": {
+                "_id": "69aeac2f5ebe3a4f5d956730",
+                "title": "Doosra Kaam",
+                "description": "This works need to be done twice.",
+                "status": "pending",
+                "priority": "high",
+                "dueDate": "2026-03-15T00:00:00.000Z",
+                "userId": "69aeab515ebe3a4f5d956720",
+                "createdAt": "2026-03-09T11:17:03.538Z",
+                "updatedAt": "2026-03-09T11:17:03.538Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:19:31.877Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/todo"
+        },
+        "message": "Operation is completed",
+        "data": {
+            "success": true,
+            "data": [
+                {
+                    "_id": "69aeac3d5ebe3a4f5d956734",
+                    "title": "Updated Task",
+                    "description": "This works need to be done thrice.",
+                    "status": "completed",
+                    "priority": "medium",
+                    "dueDate": "2026-03-15T00:00:00.000Z",
+                    "userId": "69aeab515ebe3a4f5d956720",
+                    "createdAt": "2026-03-09T11:17:17.224Z",
+                    "updatedAt": "2026-03-09T11:18:07.166Z",
+                    "__v": 0
+                },
+                {
+                    "_id": "69aeac0e5ebe3a4f5d95672c",
+                    "title": "Pehla Kaam",
+                    "description": "This is the first task that needs to be completed.",
+                    "status": "pending",
+                    "priority": "high",
+                    "dueDate": "2026-03-15T00:00:00.000Z",
+                    "userId": "69aeab515ebe3a4f5d956720",
+                    "createdAt": "2026-03-09T11:16:30.967Z",
+                    "updatedAt": "2026-03-09T11:16:30.967Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "page": 1,
+                "limit": 10,
+                "total": 2,
+                "pages": 1
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-03-09T11:19:45.493Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PUT",
+            "url": "/v1/logout"
+        },
+        "message": "Operation is completed",
+        "data": null
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2026-03-09T11:20:02.212Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 401,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/todo"
+        },
+        "message": "You are not allowed to perform this task",
+        "data": null,
+        "trace": {
+            "error": "Error: You are not allowed to perform this task\n    at C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\src\\middlewares\\authenticate.ts:29:25\n    at Generator.next (<anonymous>)\n    at C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\src\\middlewares\\authenticate.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\src\\middlewares\\authenticate.ts:4:12)\n    at C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\src\\middlewares\\authenticate.ts:10:97\n    at C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\src\\handlers\\async.ts:5:25\n    at Layer.handle [as handle_request] (C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\DELL\\OneDrive\\Desktop\\server\\base_server\\node_modules\\express\\lib\\router\\index.js:286:9"
+        }
+    }
+}

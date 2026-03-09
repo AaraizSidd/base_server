@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO API - Complete Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-top: 25px;
+        }
+        
+        h4 {
+            font-size: 1.1em;
+            color: #34495e;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .section-intro {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        pre code {
+            background: none;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        table th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        table tr:hover {
+            background: #ecf0f1;
+        }
+        
+        .endpoint {
+            background: #f0f8ff;
+            padding: 15px;
+            border-left: 4px solid #27ae60;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .endpoint-method {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #27ae60;
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .endpoint-path {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .feature-list li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .architecture-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .toc {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+        }
+        
+        .toc ol {
+            margin-left: 20px;
+        }
+        
+        .flow-diagram {
+            background: #f0f8ff;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .timestamp {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #bdc3c7;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+            
+            p, ul, ol {
+                page-break-inside: avoid;
+            }
+            
+            pre {
+                page-break-inside: avoid;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Title -->
+        <h1>📋 TODO API - Complete Documentation Report</h1>
+        
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3>📑 Table of Contents</h3>
+            <ol>
+                <li>Overview</li>
+                <li>Project Structure</li>
+                <li>Architecture</li>
+                <li>Database Schema</li>
+                <li>API Endpoints</li>
+                <li>Authentication & Authorization</li>
+                <li>Validation & Error Handling</li>
+                <li>Data Flow</li>
+                <li>Code Examples</li>
+                <li>Curl Commands</li>
+            </ol>
+        </div>
+        
+        <!-- Overview -->
+        <h2>🎯 Overview</h2>
+        <div class="section-intro">
+            <p>The TODO API is a comprehensive task management system built using <strong>Express.js</strong> with <strong>TypeScript</strong> and <strong>MongoDB</strong>. It allows authenticated users to create, read, update, and delete their personal todos with advanced features.</p>
+        </div>
+        
+        <h3>Key Features</h3>
+        <ul class="feature-list">
+            <li>User authentication (JWT-based)</li>
+            <li>Role-based access control</li>
+            <li>Todo ownership verification</li>
+            <li>Advanced filtering and pagination</li>
+            <li>Status tracking (pending, in_progress, completed)</li>
+            <li>Priority levels (low, medium, high)</li>
+            <li>Due date management</li>
+            <li>Rate limiting on write operations</li>
+            <li>Comprehensive error handling</li>
+        </ul>
+        
+        <!-- Project Structure -->
+        <h2>📁 Project Structure</h2>
+        <pre><code>src/APIs/todo/
+├── models/
+│   └── todo.model.ts           # MongoDB Schema Definition
+├── repo/
+│   └── todo.repository.ts       # Database Query Layer
+├── types/
+│   └── todo.interface.ts        # TypeScript Interfaces & Types
+├── validation/
+│   ├── validation.schema.ts     # Joi Validation Schemas
+│   └── validations.ts           # Custom Validators
+├── todo.controller.ts           # Request Handlers
+├── todo.service.ts              # Business Logic Layer
+├── router.ts                    # Route Definitions
+└── index.ts                     # Route Export</code></pre>
+        
+        <h3>Integration Points</h3>
+        <ul>
+            <li>Registered in <code>src/APIs/index.ts</code> at route <code>/v1/todo</code></li>
+            <li>Response messages in <code>src/constant/responseMessage.ts</code></li>
+            <li>Uses existing authentication middleware from <code>src/middlewares/authenticate.ts</code></li>
+        </ul>
+        
+        <div class="page-break"></div>
+        
+        <!-- Architecture -->
+        <h2>🏗️ Architecture</h2>
+        <h3>Layered Architecture Pattern</h3>
+        <div class="flow-diagram">┌─────────────────────────────────────────┐
+│    Express Routes (router.ts)           │
+│ GET, POST, PUT, PATCH, DELETE /todo    │
+└────────────────────┬────────────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│  Controller Layer (controller.ts)       │
+│ - Request validation                    │
+│ - Parameter extraction                  │
+│ - Response formatting                   │
+└────────────────────┬────────────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│  Service Layer (todo.service.ts)        │
+│ - Business logic                        │
+│ - Ownership verification                │
+│ - Data transformation                   │
+└────────────────────┬────────────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│ Repository Layer (todo.repository.ts)   │
+│ - Database queries                      │
+│ - MongoDB operations                    │
+└────────────────────┬────────────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│  MongoDB Database (todo.model.ts)       │
+│ - Data persistence                      │
+│ - Schema validation                     │
+└─────────────────────────────────────────┘</div>
+        
+        <!-- Database Schema -->
+        <h2>💾 Database Schema</h2>
+        <h3>Todo Collection Structure</h3>
+        <pre><code>{
+  _id: ObjectId,              // Unique identifier (auto-generated)
+  title: String,              // Required, 3-255 chars
+  description: String,        // Optional, max 1000 chars
+  status: String,             // pending | in_progress | completed
+  priority: String,           // low | medium | high (default: medium)
+  dueDate: Date,              // Optional expiry date
+  userId: String,             // Reference to user who owns this todo
+  createdAt: Date,            // Timestamp of creation
+  updatedAt: Date             // Timestamp of last update
+}</code></pre>
+        
+        <div class="success">
+            <strong>Indexes:</strong> userId is indexed for fast user-specific queries
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- API Endpoints -->
+        <h2>🔌 API Endpoints</h2>
+        
+        <h3>1. Create Todo</h3>
+        <div class="endpoint">
+            <div><span class="endpoint-method">POST</span> <span class="endpoint-path">/v1/todo</span></div>
+            <p><strong>Authentication:</strong> Required | <strong>Rate Limiting:</strong> Applied</p>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+  "title": "Buy groceries",
+  "description": "Milk, eggs, bread",
+  "priority": "high",
+  "dueDate": "2026-03-15"
+}</code></pre>
+            <p><strong>Response (201 Created):</strong></p>
+            <pre><code>{
+  "success": true,
+  "statusCode": 201,
+  "message": "Operation is completed",
+  "data": {
+    "success": true,
+    "data": {
+      "_id": "65f1234...",
+      "title": "Buy groceries",
+      "status": "pending"
+    }
+  }
+}</code></pre>
+        </div>
+        
+        <h3>2. Get All Todos</h3>
+        <div class="endpoint">
+            <div><span class="endpoint-method">GET</span> <span class="endpoint-path">/v1/todo</span></div>
+            <p><strong>Query Parameters:</strong></p>
+            <ul>
+                <li><code>status</code>: Filter by status (pending, in_progress, completed)</li>
+                <li><code>priority</code>: Filter by priority (low, medium, high)</li>
+                <li><code>page</code>: Page number (default: 1)</li>
+                <li><code>limit</code>: Items per page (default: 10, max: 100)</li>
+            </ul>
+            <p><strong>Example:</strong> <code>GET /v1/todo?status=pending&priority=high&page=1&limit=10</code></p>
+        </div>
+        
+        <h3>3. Get Specific Todo</h3>
+        <div class="endpoint">
+            <div><span class="endpoint-method">GET</span> <span class="endpoint-path">/v1/todo/:id</span></div>
+            <p><strong>Ownership Check:</strong> Yes | <strong>Returns:</strong> Single todo object</p>
+        </div>
+        
+        <h3>4. Update Todo</h3>
+        <div class="endpoint">
+            <div><span class="endpoint-method">PUT</span> <span class="endpoint-path">/v1/todo/:id</span></div>
+            <p><strong>All fields optional. Example request:</strong></p>
+            <pre><code>{
+  "title": "Updated title",
+  "status": "in_progress",
+  "priority": "medium"
+}</code></pre>
+        </div>
+        
+        <h3>5. Mark Todo Complete</h3>
+        <div class="endpoint">
+            <div><span class="endpoint-method">PATCH</span> <span class="endpoint-path">/v1/todo/:id/complete</span></div>
+            <p>Sets status to <code>completed</code></p>
+        </div>
+        
+        <h3>6. Delete Todo</h3>
+        <div class="endpoint">
+            <div><span class="endpoint-method">DELETE</span> <span class="endpoint-path">/v1/todo/:id</span></div>
+            <p><strong>Ownership Check:</strong> Yes | <strong>Returns:</strong> Deleted todo object</p>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Authentication & Authorization -->
+        <h2>🔐 Authentication & Authorization</h2>
+        <h3>Authentication Flow</h3>
+        <div class="flow-diagram">┌────────────────────────────────┐
+│ 1. User Registers & Logs In    │
+│ - Credentials validated        │
+│ - JWT tokens generated         │
+│ - Stored in cookies            │
+└──────────────┬─────────────────┘
+               │
+┌──────────────▼─────────────────┐
+│ 2. Request to Todo Endpoint    │
+│ - Cookies sent with request    │
+│ - accessToken extracted        │
+└──────────────┬─────────────────┘
+               │
+┌──────────────▼─────────────────┐
+│ 3. Authenticate Middleware     │
+│ - Verifies JWT token           │
+│ - Extracts userId              │
+│ - Attaches user to request     │
+└──────────────┬─────────────────┘
+               │
+┌──────────────▼─────────────────┐
+│ 4. Controller Receives Req     │
+│ - req.authenticatedUser set    │
+│ - User ID available for ops    │
+└────────────────────────────────┘</div>
+        
+        <h3>Authorization (Ownership Verification)</h3>
+        <p>For <code>GET</code>, <code>PUT</code>, <code>DELETE</code>, <code>PATCH</code> operations:</p>
+        <pre><code>// In validation/validations.ts
+todoOwnershipVerification: async (todoId, userId) => {
+  // 1. Fetch todo from database
+  const todo = await query.getTodoById(todoId)
+  
+  // 2. Check if todo exists
+  if (!todo) throw new Error('Todo not found')
+  
+  // 3. Compare todo owner with authenticated user
+  if (todo.userId.toString() !== userId.toString()) {
+    throw new Error('Unauthorized')
+  }
+  
+  // 4. Return todo if authorized
+  return todo
+}</code></pre>
+        
+        <div class="warning">
+            <strong>Important:</strong> Users can only access/modify their own todos. The system verifies ownership on all operations.
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Validation & Error Handling -->
+        <h2>✅ Validation & Error Handling</h2>
+        
+        <h3>Error Handling Hierarchy</h3>
+        <table>
+            <tr>
+                <th>Error Type</th>
+                <th>Status Code</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Validation Error</td>
+                <td>422</td>
+                <td>Invalid input format, missing fields</td>
+            </tr>
+            <tr>
+                <td>Authentication Error</td>
+                <td>401</td>
+                <td>Missing or invalid token</td>
+            </tr>
+            <tr>
+                <td>Authorization Error</td>
+                <td>403</td>
+                <td>User accessing another user's todo</td>
+            </tr>
+            <tr>
+                <td>Not Found</td>
+                <td>404</td>
+                <td>Todo doesn't exist</td>
+            </tr>
+            <tr>
+                <td>Server Error</td>
+                <td>500</td>
+                <td>Unexpected exceptions</td>
+            </tr>
+        </table>
+        
+        <h3>Error Response Format</h3>
+        <pre><code>{
+  "success": false,
+  "statusCode": 422,
+  "request": {
+    "ip": "::1",
+    "method": "POST",
+    "url": "/v1/todo"
+  },
+  "message": "Title is required",
+  "data": null,
+  "trace": {
+    "error": "ValidationError..."
+  }
+}</code></pre>
+        
+        <div class="page-break"></div>
+        
+        <!-- Curl Commands -->
+        <h2>📤 Curl Commands</h2>
+        
+        <h3>1. Register User</h3>
+        <pre><code>curl -X POST http://localhost:3000/v1/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phoneNumber": "12125551234",
+    "password": "Secure@123"
+  }'</code></pre>
+        
+        <h3>2. Login</h3>
+        <pre><code>curl -X POST http://localhost:3000/v1/login \
+  -H "Content-Type: application/json" \
+  -c cookies.txt \
+  -d '{
+    "email": "john@example.com",
+    "password": "Secure@123"
+  }'</code></pre>
+        
+        <h3>3. Create Todo</h3>
+        <pre><code>curl -X POST http://localhost:3000/v1/todo \
+  -H "Content-Type: application/json" \
+  -b cookies.txt \
+  -d '{
+    "title": "Buy groceries",
+    "description": "Milk, eggs, bread",
+    "priority": "high",
+    "dueDate": "2026-03-15"
+  }'</code></pre>
+        
+        <h3>4. Get All Todos</h3>
+        <pre><code>curl -X GET "http://localhost:3000/v1/todo?status=pending&priority=high&page=1&limit=10" \
+  -H "Content-Type: application/json" \
+  -b cookies.txt</code></pre>
+        
+        <h3>5. Get Specific Todo</h3>
+        <pre><code>curl -X GET http://localhost:3000/v1/todo/{todoId} \
+  -H "Content-Type: application/json" \
+  -b cookies.txt</code></pre>
+        
+        <h3>6. Update Todo</h3>
+        <pre><code>curl -X PUT http://localhost:3000/v1/todo/{todoId} \
+  -H "Content-Type: application/json" \
+  -b cookies.txt \
+  -d '{
+    "status": "in_progress",
+    "priority": "medium"
+  }'</code></pre>
+        
+        <h3>7. Mark Todo Complete</h3>
+        <pre><code>curl -X PATCH http://localhost:3000/v1/todo/{todoId}/complete \
+  -H "Content-Type: application/json" \
+  -b cookies.txt</code></pre>
+        
+        <h3>8. Delete Todo</h3>
+        <pre><code>curl -X DELETE http://localhost:3000/v1/todo/{todoId} \
+  -H "Content-Type: application/json" \
+  -b cookies.txt</code></pre>
+        
+        <div class="page-break"></div>
+        
+        <!-- Summary Table -->
+        <h2>📊 Summary</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Authentication</td>
+                <td>✅</td>
+                <td>JWT-based via cookies</td>
+            </tr>
+            <tr>
+                <td>Authorization</td>
+                <td>✅</td>
+                <td>Ownership verification on all operations</td>
+            </tr>
+            <tr>
+                <td>Validation</td>
+                <td>✅</td>
+                <td>Joi schemas + custom validators</td>
+            </tr>
+            <tr>
+                <td>Error Handling</td>
+                <td>✅</td>
+                <td>Comprehensive with proper status codes</td>
+            </tr>
+            <tr>
+                <td>Pagination</td>
+                <td>✅</td>
+                <td>Page/limit support</td>
+            </tr>
+            <tr>
+                <td>Filtering</td>
+                <td>✅</td>
+                <td>Status & priority filters</td>
+            </tr>
+            <tr>
+                <td>Rate Limiting</td>
+                <td>✅</td>
+                <td>Applied on write operations</td>
+            </tr>
+            <tr>
+                <td>Timestamps</td>
+                <td>✅</td>
+                <td>createdAt & updatedAt</td>
+            </tr>
+            <tr>
+                <td>Type Safety</td>
+                <td>✅</td>
+                <td>Full TypeScript coverage</td>
+            </tr>
+            <tr>
+                <td>Database</td>
+                <td>✅</td>
+                <td>MongoDB with Mongoose</td>
+            </tr>
+        </table>
+        
+        <!-- Footer -->
+        <div class="timestamp">
+            <p><strong>Generated:</strong> March 9, 2026</p>
+            <p><strong>API Version:</strong> 1.0</p>
+            <p><strong>Framework:</strong> Express.js + TypeScript + MongoDB</p>
+            <p style="margin-top: 20px; color: #95a5a6;">📖 This documentation provides a complete reference for the TODO API implementation.</p>
+        </div>
+    </div>
+</body>
+</html>
